@@ -7,8 +7,6 @@ import datetime
 import pandas as pd
 import logging
 
-import pandas as pd
-
 class Inception():
     def __init__(self,
                  encodingToWrite = "utf-8-sig",
