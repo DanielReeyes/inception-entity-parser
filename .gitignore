@@ -1,3 +1,5 @@
 *.tsv
 *.csv
-
+*.log
+*.DS_Store
+*.Rhistory
