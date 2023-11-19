@@ -90,36 +90,4 @@ if __name__ == '__main__':
         filename = sys.argv[1]
         main(filename)
     else:
-        filename =  "VilaVicosa_NossaSenhoraDaConceicão.revista.normalizada;VilaVicosa_Pardais.revista.normalizada;" \
-                    "VilaVicosa_SantaAnaDeBencatel.revista.normalizada;VilaVicosa_SaoBartolomeu.revista.normalizada;" \
-                    "VilaVicosa_SaoRomao.revista.normalizada;VilaVicosa.NossaSenhoraDasCiladas.revista.normalisada;" \
-                    "Beja_Albernoa.modernizada;Beja_Alfundao.modernizada;Beja_Baleizao.modernizada;" \
-                    "Beja_Beringel.modernizada;" \
-                    "Beja_Brissos.modernizada;Beja_Farinho.modernizada;" \
-                    "Beja_Marmelar.modernizada;" \
-                    "Beja_Mombeja.modernizada;Beja_OriolaDeBaixo.modernizada;" \
-                    "Beja_Peroguarda.modernizada;Beja_Quintos.modernizada;Beja_Salvada.modernizada;" \
-                    "Beja_Salvador.modernizada;Beja_SantaCatarinaDeSelmes.modernizada;" \
-                    "Beja_SantaClaraDoLouredo.modernizada;Beja_SantaMaria.modernizada;Beja_SantaVitoria.modernizada;" \
-                    "Beja_Santiago.modernizada;Beja_SantissimaTrindade.modernizada;Beja_SaoJoaoBaptista.modernizada;" \
-                    "Beja_SaoMatias.modernizada;Beja_SaoPedroDePedrogao.modernizada;Beja_SaoPedroDePomares.modernizada;" \
-                    "Beja_SenhoraDaLuz.modernizada;Beja_Vidigueira.modernizada;Beja_VilaDeFrades.modernizada;" \
-                    "Beja_Vilalva.modernizada;Beja_VilaRuiva.modernizada;Beja_VilasBoas.modernizada;" \
-                    "Evora_NossaSenhoraDaBoaFe_normalizada.revista;Evora_NossaSenhoraDaGracaDoDivor_normalizada.revista;" \
-                    "Evora_NossaSenhoraDaMachede.normalisada.revista;Evora_NossaSenhoraDaTourega.normalisada.revista;" \
-                    "Evora_Santiago.normalizada.revista;Evora_SantoAntao.normalizada;Evora_SaoBentoDePomares.normalizada;" \
-                    "Evora_SaoBentoDoMato.normalizada;Evora_SaoBrasDeRegedouro.normalizada;Evora_SaoJordao.normalizada;" \
-                    "Evora_SaoMamede.normalizada;Evora_SaoMancos.normalizada;Evora_SaoMarcosDaAbobada.normalizada;" \
-                    "Evora_SaoMatias.normalizada;Evora_SaoMiguelDeMachede.normalizada;Evora_SaoPedro.normalizada;" \
-                    "Evora_SaoSebastiaoDaGiesteira.normalizada;Evora_SaoVicenteDeValongo.normalizada;" \
-                    "Evora_SaoVicenteDoPigeiro.normalizada;Evora_Se.modernizada.revista;" \
-                    "Portalegre_Urra.normalisadaRevista;Portalegre_SaoMartinho.normalisadaRevista" \
-                    ";Portalegre_SaoLourenco.normalizada.revista;Portalegre_SaoJuliao.normalizada.revista" \
-                    ";Portalegre_SantiagoMaior.normalisada.revista;Portalegre_SantaMariaMadalena.normalizada.revista" \
-                    ";Portalegre_Reguengo.normalisada.revista;Portalegre_NossaSenhoraDaAssuncao.Se.revista.normalizada" \
-                    ";Portalegre_NossaSenhoraDaAlagoa.normalisada.revista;Portalegre_Fortios.normalisada.revista" \
-                    ";Portalegre_Carreiras_normalizada.comParatexto;Portalegre_Caiola_normalizada.revista" \
-                    ";Portalegre_Alegrete_modernizada.revista;Portalegre_ RibeiraDeNisa.normalisada.revista1"
-
-        main(filename)
-        # print("Por favor, forneça o nome do arquivo como argumento.")
+        print("Por favor, forneça o nome do arquivo como argumento.")

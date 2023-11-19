@@ -1,52 +1,73 @@
-# Project Name
+# Inception Parser
 
-Description of the project.
+O projeto de parser de anotações de texto do software Inception é uma colaboração com a Universidade de Évora, visando aprimorar a formatação do arquivo de saída gerado pelo próprio software. 
 
-## Instructions
+A principal finalidade é otimizar a legibilidade do documento final, unificando e formatando de maneira coesa todas as entidades extraídas durante o processo de anotação de texto. 
 
-These instructions will guide you on how to run the code and perform the necessary steps.
+Em outras palavras, o parser atua como uma ferramenta que organiza e estrutura as informações extraídas pelo Inception, tornando o resultado mais compreensível e acessível para os usuários.
 
-### Prerequisites
+Também dentro da pasta src/exploratory-data-analysis é fornecido um notebook para análise exploratória dos dados com algumas visualizações do comportamento dos dados e distribuição das entidades entre as freguesias.
 
-- Python (version X.X.X)
-- Required dependencies (mention if any)
+## Instruções
 
-### Installation
+Para executar o parser de um ou mais arquivos: 
+1. Copie-os para a pasta DataToParse;
+2. Os arquivos devem estar em formato .tsv como retornado pelo Inception;
+   1. Texto anotado: 
+      ['#Text=Beringel, 1758\\r'] \
+      ['#Text=Memória Paroquial de Beringel, Comarca de Beja\\r'] \
+      ['#Text=[ANTT, Memórias paroquiais, vol. 7, nº 8, p. 755 a 760]\\r'] \
+      ['#Text=\\r'] \
+      ['#Text=“p. 755/\\r'] \
+      ['#Text=Vila de Beringel.\\r'] \
+      ['#Text=1 A vila de Beringel fica na província de Alentejo, no arcebispado de Évora, comarca de Beja.'] 
+   2. seguido de cada palavra como o exemplo abaixo: \
+      ['1-1', '0-8', 'Beringel', '_', '_', 'Header[52]', '']
+3. Navegue até a pasta src do projeto e chame o script Main.py passando o nome do arquivo que queremos fazer o parser. 
+4. O arquivo resultado do parser será gerado dentro da pasta ParsedData com o nome do arquivo, a data e hora de execução mais um sufixo "_parsed".
+5. É gerado um arquivo de log para cada execução de cada arquivo onde podemos analisar o que ocorreu em cada linha analisada;
+6. Durante o processo é feita uma análise da estrutura frase a frase, caso não possua 6 ou mais colunas, a linha é ignorada e o processo avança para a próxima linha;
+7. Cada função utilizada encontra-se dentro da classe Parser\Inception.py. E cada função encontra-se documentada.
+8. Também gera-se um arquivo agregado, contendo todas as entidades de todos arquivos analisados (caso tenha sido passado mais de um arquivo como parâmetro)
 
-1. Clone the repository:
+### Pré-requisitos
 
-```shell
-git clone <repository_url>
-```
+- Python (version 3.9.13);
+- Existe um arquivo requirements com todas as outras dependências;
 
-2. Install the required dependencies:
-```shell
-pip install -r requirements.txt
-```
+### Instalação
+
+1. Clone o repositório:
+   ```shell
+   git clone <repository_url>
+   ```
+
+2. Instale as dependências necessárias:
+   ```shell
+   pip install -r requirements.txt
+   ```
 
 ### Usage
 
-1. Navigate to the project directory:
-```shell
-cd project-directory
-```
+1. Navegue até o diretório do projeto:
+   ```shell
+   cd ../inception-entity-parser/src/
+   ```
 
 2. Run the code:
-```shell
-python main.py [files]
-```
-Replace [files] with the names of the files to process, separated by a semicolon.
+   
+   ```shell
+   python Main.py "Beja_Beringel.modernizada"
+   ```
+   Caso seja mais de um arquivo, deve ser passado os nomes dos arquivos separados por ";" sem espaços entre os nomes.
+   ```shell
+   python Main.py "Beja_Beringel.modernizada;VilaVicosa_SantaAnaDeBencatel.revista.normalizada;VilaVicosa_SaoBartolomeu.revista.normalizada;"
+   ```
+   
+3. Visualizar os logs:
+Os logs serão salvos no diretório de logs com o formato [nome do arquivo]_[timestamp].log. 
 
-3. View the logs:
-Logs will be saved in the logs directory with the format [filename]_[timestamp].log.
-
-4. Output:
-- The output will be saved as CSV files:
-  - Individual files: [filename].csv 
-  - Aggregated file: freguesias_aggregated.csv
-
-### Example
-```shell
-python main.py file1.txt;file2.txt;file3.txt
-```
-This command will process file1.txt, file2.txt, and file3.txt.
+5. Saída\resultados:
+- A saída será salva como arquivos CSV:
+   - Arquivos individuais: [nome do arquivo].csv
+   - Arquivo agregado: freguesias_agregado.csv
