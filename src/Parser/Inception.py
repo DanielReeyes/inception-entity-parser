@@ -44,6 +44,7 @@ class Inception():
             text = []
             notations = []
             previous_line_length = 0
+            text_quantity = 0
 
             with open(file_path, encoding='utf-8') as file:
                 tsv_file = csv.reader(file, delimiter=self.delimiter)
@@ -57,6 +58,7 @@ class Inception():
                         logging.info(f">>> Text annotated: {text}")
                         logging.info(f">>> {len(notations)} - Finished parsing!")
                         text = []
+                        text_quantity = text_quantity + 1
                     elif line_length == 1:
                         if previous_line_length > 1:
                             logging.info(f">>> {len(notations)} - Finished parsing!")
@@ -80,7 +82,6 @@ class Inception():
                             #'undefined2': line[6]
                         }
 
-                        #logging.info(f">>> {notation_dict}")
                         notations.append(notation_dict)
 
                     else:
@@ -90,9 +91,8 @@ class Inception():
                         time.sleep(5)
 
                     previous_line_length = line_length
-            #logging.info(f">>> {len(notations)}")
 
-
+            logging.info(f"Finished to load {text_quantity} texts. ")
             return pd.DataFrame(notations)
         except FileNotFoundError:
             logging.error(f"File '{self.fileName}.tsv' not found.")
